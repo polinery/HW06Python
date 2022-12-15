@@ -1,7 +1,10 @@
 ''' Сотрудники и зарплата. Заменено формирование списков функцией .append
 на списковое включение'''
 
+from memory_profiler import profile
 
+
+@profile()
 def salary_2(lst):
     lst = [i.split() for i in lst]
     poor = [i[0] for i in lst if int(i[1]) < 20000]
